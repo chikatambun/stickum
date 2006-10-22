@@ -1,0 +1,2 @@
+db_module=stickum.model
+history_dir=$base/stickum/sqlobject-history
