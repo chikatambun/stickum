@@ -11,6 +11,8 @@ from cStringIO import StringIO
 
 from stickum.silvercity import html_splitlines, SilverCityRenderer
 
+import cgi
+
 paste_table = Table("pastes", metadata,
     Column("id", Integer, primary_key=True),
     Column("pasted_on", DateTime, default=datetime.now()),
@@ -28,15 +30,14 @@ class Paste(object):
     
     @classmethod
     def get_latest(self):
-        limit = Setting.get("latest_limit").data
+        limit = Setting.get("latest_limit")
         if not limit:
             # Set a reasonable default
-            limit = 10
-            s = Setting()
-            s.name = "latest_limit"
-            s.data = limit
-            s.flush()
-        return Paste.select(order_by=desc("pasted_on"), limit=limit)
+            limit = Setting()
+            limit.name = "latest_limit"
+            limit.data = 10
+            limit.flush()
+        return Paste.select(order_by=desc("pasted_on"), limit=limit.data)
         
     @classmethod
     def get_count(self):
@@ -48,8 +49,7 @@ class Paste(object):
                 self._formatted_content = SilverCityRenderer().render(self.lang, self.content)
                 self.flush()
             else:
-                return self.content
-                self._formatted_content = self.content
+                self._formatted_content = cgi.escape(self.content)
                 self.flush()
         return self._formatted_content
 
