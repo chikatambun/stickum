@@ -2,123 +2,205 @@
  * Quick mash-up of CSS for the TG quick start page.
  */
 
-html, body, th, td {
+body {
   color: black;
-  background-color: #ddd;
-  font: x-small "Lucida Grande", "Lucida Sans Unicode", geneva, verdana, sans-serif;
+  font: small "Lucida Grande", "Lucida Sans Unicode", geneva, verdana, sans-serif;
   margin: 0;
   padding: 0;
 }
-
-#header {
-  height: 80px;
-  width: 777px;
-  background: blue URL('../images/header_inner.png') no-repeat;
-  border-left: 1px solid #aaa;
-  border-right: 1px solid #aaa;
-  margin: 0 auto 0 auto;
+tr, td {
+    font: small "Lucida Grande", "Lucida Sans Unicode", geneva, verdana, sans-serif;
+    margin: 0;
+    padding: 0;
 }
-
-a.link, a, a.active {
-  color: #369;
+#main_content a {
+    color: #000;
 }
-
-
+#main_content a:hover {
+    background-color: #9CF;
+}
 #main_content {
-  color: black;
-  font-size: 127%;
-  background-color: white;
-  width: 757px;
-  margin: 0 auto 0 auto;
-  border-left: 1px solid #aaa;
-  border-right: 1px solid #aaa;
-  padding: 10px;
+    padding: 1em;
+}
+.title {
+    background-color: #9CF;
+    padding: 1em;
+    margin: 0;
+}
+.titlequote {
+    font-size: 0.8em;
+    font-style: italic;
+    color: #666;
+}
+#nav {
+    background-color: #000;
+    margin: 0;
+    padding: 0.5em 0 0.5em 0;
+}
+#nav a {
+    color: #FFF;
+    padding: 0.5em;
+    margin: 0 0.5em 0 0.5em;
+}
+#nav a:hover {
+    color: #000;
+    background-color: #FFF;
 }
 
-#sidebar {
-  border: 1px solid #aaa;
-  background-color: #eee;
-  margin: 0.5em;
-  padding: 1em;
-  float: right;
-  width: 200px;
-  font-size: 88%;
+.title h1 {
+    margin: 0;
 }
 
-#sidebar h2 {
-  margin-top: 0;
+.clearing {
+    clear: both;
 }
 
-#sidebar ul {
-  margin-left: 1.5em;
-  padding-left: 0;
+.central {
+    margin: 0 auto 0 auto;
 }
 
-h1,h2,h3,h4,h5,h6,#getting_started_steps {
-  font-family: "Century Schoolbook L", Georgia, serif;
-  font-weight: bold;
+a img {
+    border: 0;
+}
+.code_table {
+    background-color: #EEE;
+    border: 1px solid #CCC;
+    width: 100%;
+    overflow: auto;
+}
+.code_line {
+    width: 100%;
+    padding-left: 0.2em;
+}
+.line_number {
+    padding: 0 0.2em 0 0.2em;
+    color: #666;
+    font-size: 0.8em;
+    text-align: right;
+}
+.line_dec {
+    color: #000;
+}
+.code_table pre {
+    border: none;
+    padding: 2px;
+    overflow: none;
+}
+.code_table tr {
+    padding: 0;
+    margin: 0;
+}
+pre {
+    font-face: verdana, arial, helvetica, sans-serif; 
+    border: 1px solid #CCC;
+    background-color: #EEE;
+    padding: 1em;
+    margin: 0;
+}
+.pasteview {
+    overflow: auto;
+}
+.paste_header {
+    background-color: #CCC;
+    padding: 0.5em 1em 0.5em 1em;
+    margin: 0;
+}
+.paste_count {
+    color: #CCC;
+    font-style: italic;
 }
 
-h2 {
-  font-size:150%
+/* Comments */
+.code-comment, .css_comment, .c_comment, .c_commentdoc, .c_commentline,
+.c_commentlinedoc, .h_comment,.pl_commentline, .p_commentblock,
+.p_commentline, .hphp_comment, .hphp_commentblock, .hphp_commentline,
+.yaml_comment {
+ color: #998; 
+ font-style: italic;
 }
 
-#getting_started_steps a {
-  text-decoration:none;
+/* Language keyword */
+.code-keyword, .pl_word  { color: #789; font-weight: bold }
+
+/* Type */
+.code-type, .c_word, .c_word2, .p_classname, .hphp_classname{
+ color: #468;
+ font-weight: bold;
 }
 
-#getting_started_steps a:hover {
-  text-decoration:underline;
+/* Function */
+.code-func, .p_defname {
+ color: #900;
+ font-weight: bold;
+ border-bottom: none;
 }
 
-#getting_started_steps li {
-  font-size:80%
-  margin-bottom: 0.5em;
+/* Pre-processor */
+.code-prep, .c_preprocessor, .pl_preprocessor, .yaml_identifier {
+ color: #999;
+ font-weight: bold;
 }
 
-#getting_started_steps h2 {
-  font-size:120%;
+/* Language construct */
+.code-lang, .p_word { color: #000; font-weight: bold }
+
+/* String */
+.code-string, .c_string, .c_stringeol, .css_doublestring, .css_singlestring,
+.h_singlestring, .h_doublestring, .pl_string, .pl_string_q, .pl_string_qq,
+.pl_string_qr, .pl_string_qw, .pl_string_qx, .pl_backticks, .pl_character,
+.p_string, .p_stringeol, .hphp_string, .hphp_stringeol, .hphp_triple,
+.hphp_tripledouble, .p_character, .p_triple, .p_tripledouble {
+ color: #b84;
+ font-weight: normal;
 }
 
-#getting_started_steps p {
-  font: 100% "Lucida Grande", "Lucida Sans Unicode", geneva, verdana, sans-serif;
-}
+/* Variable name */
+.code-var { color: #f9f }
 
-#footer {
-  border: 1px solid #aaa;
-  border-top: 0px none;
-  color: #999;
-  background-color: white;
-  padding: 10px;
-  font-size: 80%;
-  text-align: center;
-  width: 757px;
-  margin: 0 auto 1em auto;
-}
+/* SilverCity-specific styles */
+.css_id, .css_class, .css_pseudoclass, .css_tag { color: #900000 }
+.css_directive { color: #009000; font-weight: bold }
+.css_important { color: blue }
+.css_operator { color: #000090; font-weight: bold }
+.css_tag { font-weight: bold }
+.css_unknown_identifier, .css_unknown_pseudoclass { color: red }
+.css_value { color: navy }
+.c_commentdockeyword { color: navy; font-weight: bold }
+.c_commentdockeyworderror { color: red; font-weight: bold }
+.c_character, .c_regex, .c_uuid, .c_verbatim { color: olive }
+.c_number { color: #099 }
+.h_asp { color: #ff0 }
+.h_aspat { color: #ffdf00 }
+.h_attribute { color: teal }
+.h_attributeunknown { color: red }
+.h_cdata { color: #373 }
+.h_entity { color: purple }
+.h_number { color: #099 }
+.h_other { color: purple }
+.h_script, .h_tag, .h_tagend { color: navy }
+.h_tagunknown { color: red }
+.h_xmlend, .h_xmlstart { color: blue }
+.pl_datasection { color: olive }
+.pl_error { color: red; font-weight: bold }
+.pl_hash { color: #000 }
+.pl_here_delim, .pl_here_q, .pl_here_qq, .pl_here_qx, .pl_longquote { color: olive }
+.pl_number { color: #099 }
+.pl_pod { font-style: italic }
+.pl_regex, .pl_regsubst { color: olive }
+.p_number { color: #099 }
+.hphp_character { color: olive }
+.hphp_defname { color: #099; font-weight: bold }
+.hphp_number { color: #099 }
+.hphp_word { color: navy; font-weight: bold }
+.yaml_document { color: gray; font-style: italic }
+.yaml_keyword { color: #808 }
+.yaml_number { color: #800 }
+.yaml_reference { color: #088 }
+.v_comment { color: gray; font-style: italic }
+.v_commentline, .v_commentlinebang { color: red; font-style: italic }
+.v_number, .v_preprocessor { color: #099 }
+.v_string, .v_stringeol { color: olive }
+.v_user{ color: blue; font-weight: bold }
+.v_word, .v_word3 { color: navy; font-weight: bold }
+.v_word2 { color: green; font-weight: bold }
 
-.code {
-  font-family: monospace;
-}
-
-span.code {
-  font-weight: bold;
-  background: #eee;
-}
-
-#status_block {
-	margin: 0 auto 0.5em auto;
-	padding: 15px 10px 15px 55px;
-  background: #cec URL('../images/ok.png') left center no-repeat;
-	border: 1px solid #9c9;
-  width: 450px;
-  font-size: 120%;
-  font-weight: bolder;
-}
-
-.notice {
-  margin: 0.5em auto 0.5em auto;
-  padding: 15px 10px 15px 55px;
-  width: 450px;
-  background: #eef URL('../images/info.png') left center no-repeat;
-  border: 1px solid #cce;
-}
