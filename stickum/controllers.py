@@ -34,9 +34,19 @@ class PasteController(controllers.Controller):
         paste.lang = lang
         paste.pasted_on = datetime.now()
         paste.flush()
-        raise redirect("/paste/%d" % paste.id)
+        raise redirect(turbogears.url("/paste/%d" % paste.id))
             
-        
+    @expose()
+    def save_cli(self, content, lang, submit):
+        paste = model.Paste()
+        paste.content = content
+        paste.lang = lang
+        paste.pasted_on = datetime.now()
+        paste.flush()
+        url_root = "http://paste.turbogears.org"
+        paste_url = turbogears.url("/paste/%d" % paste.id)
+        return "%s%s" % (url_root, paste_url)
+
     @expose()
     def default(self, id, action="view", *args, **kw):
         try:
