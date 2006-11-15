@@ -18,6 +18,8 @@ setup(
     
     install_requires = [
         "TurboGears >= 1.0b1",
+        "SQLAlchemy",
+        #"SilverCity" #CURRENTLY BROKEN
     ],
     scripts = ["start-stickum.py"],
     zip_safe=False,
@@ -41,7 +43,7 @@ setup(
         # 'python.templating.engines',
         
         # If this is a full application, uncomment the next line
-        # 'turbogears.app',
+         'turbogears.app',
     ],
     classifiers = [
         'Development Status :: 3 - Alpha',
@@ -51,7 +53,7 @@ setup(
         'Framework :: TurboGears',
         # if this is an application that you'll distribute through
         # the Cheeseshop, uncomment the next line
-        # 'Framework :: TurboGears :: Applications',
+         'Framework :: TurboGears :: Applications',
         
         # if this is a package that includes widgets that you'll distribute
         # through the Cheeseshop, uncomment the next line

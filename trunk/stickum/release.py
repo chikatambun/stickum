@@ -1,6 +1,6 @@
 # Release information about stickum
 
-version = "1.0"
+version = "0.1"
 
 # description = "Your plan to rule the world"
 # long_description = "More description about your plan"
