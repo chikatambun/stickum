@@ -8,11 +8,11 @@
 <body>
     <div class="paste_zone central">
     <p><strong>Instructions:</strong> Type or Paste.  Click "Paste it!". It's that simple. :)</p>
-    <form action="/paste/save" method="post">
+    <form action="${tg.url('/paste/save')}" method="post">
         <div>
             <label for="lang">Syntax Highlighting:</label>
             <select name="lang">
-                <option py:for="lang in languages">${lang}</option>
+                <option py:for="lang in languages" value="${lang[0]}">${lang[1]}</option>
             </select>
         </div>
         <div><textarea name="content" rows="20" cols="80"></textarea></div>

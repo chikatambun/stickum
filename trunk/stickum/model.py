@@ -9,7 +9,9 @@ from stickum.util import Parser
 
 from cStringIO import StringIO
 
-from stickum.silvercity import html_splitlines, SilverCityRenderer
+from pygments import highlight
+from pygments.lexers import get_lexer_by_name
+from pygments.formatters import HtmlFormatter
 
 import cgi
 
@@ -46,7 +48,9 @@ class Paste(object):
     def _get_formatted_content(self):
         if not self._formatted_content:
             if not self.lang == "None":                
-                self._formatted_content = SilverCityRenderer().render(self.lang, self.content)
+                lexer = get_lexer_by_name(self.lang, stripall=True)
+                formatter = HtmlFormatter(linenos=True, cssclass="source")
+                self._formatted_content = highlight(self.content, lexer, formatter)
                 self.flush()
             else:
                 self._formatted_content = cgi.escape(self.content)
@@ -60,7 +64,7 @@ class Paste(object):
     formatted_content = property(_get_formatted_content, _set_formatted_content)
     
     def _get_formatted_lines(self):
-        return html_splitlines(self.formatted_content.splitlines())
+        return self.formatted_content
     formatted_lines = property(_get_formatted_lines)
         
     
