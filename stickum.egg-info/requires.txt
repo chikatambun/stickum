@@ -1,3 +1,2 @@
 TurboGears >= 1.0b1
 SQLAlchemy
-SilverCity
