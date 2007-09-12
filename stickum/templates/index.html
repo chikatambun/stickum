@@ -13,7 +13,7 @@
         <div>
           <label for="lang">Syntax Highlighting:</label>
           <select name="lang">
-            <option py:for="lang in languages" value="${lang[0]}">${lang[1]}</option>
+            <option py:for="lang in sorted(languages.keys())" value="${lang}">${languages[lang]}</option>
           </select>
         </div>
         <div><textarea name="content" rows="20" cols="80"></textarea></div>

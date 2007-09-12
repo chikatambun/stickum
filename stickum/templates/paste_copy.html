@@ -10,7 +10,7 @@
   <body>
     <div id="paste_${paste.id}" class="pasteview">
       <div class="paste_header">
-        ${paste.lang=="None" and "P" or "%s code p" % languagedict[paste.lang]}asted @ ${paste.pasted_on.strftime("%H:%M")}
+        ${paste.lang=="None" and "P" or "%s code p" % languages[paste.lang]}asted @ ${paste.pasted_on.strftime("%H:%M")}
         on ${paste.pasted_on.strftime("%a, %d %b %y")}<br/>
         <ul class="actions">
           <li class="first"><a href="${tg.url('/paste/%s' % paste.id)}">Syntaxed up</a></li>
@@ -24,7 +24,7 @@
         <div>
           <label for="lang">Syntax Highlighting:</label>
           <select name="lang">
-            <option py:for="lang in languages" value="${lang[0]}" selected="${tg.selector(lang[0]==paste.lang)}">${lang[1]}</option>
+            <option py:for="lang in sorted(languages.keys())" value="${lang}" selected="${tg.selector(lang==paste.lang)}">${languages[lang]}</option>
           </select>
         </div>
         <div><textarea name="content" rows="20" cols="80" py:content="paste.content"></textarea></div>
