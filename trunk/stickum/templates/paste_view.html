@@ -10,7 +10,7 @@
   <body>
     <div id="paste_${paste.id}" class="pasteview">
       <div class="paste_header">
-        ${paste.lang=="None" and "P" or "%s code p" % languagedict[paste.lang]}asted @ ${paste.pasted_on.strftime("%H:%M")}
+        ${paste.lang=="None" and "P" or "%s code p" % languages[paste.lang]}asted @ ${paste.pasted_on.strftime("%H:%M")}
         on ${paste.pasted_on.strftime("%a, %d %b %y")}
         <ul class="actions">
           <li class="first"><a href="${tg.url('/paste/%s/copy#edit' % paste.id)}">Copy &amp; Paste</a></li>
